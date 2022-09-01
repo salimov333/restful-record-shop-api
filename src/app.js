@@ -1,8 +1,10 @@
 import express from "express";
+import router from "../routes/recordRouter.js";
+
 
 const app = express();
 
-app.get("/", (req, res) => res.send("Hello To My Record Shop"));
+app.use("/", router);
 
 
 
