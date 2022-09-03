@@ -1,12 +1,9 @@
-# RESTful records API
+# RESTful Record Shop API
 
 - `Node.js`
 - `express.js`
 
 **Create a Record Shop API using express.js.**
-### [APP-Link](https://salimov333.github.io/restful-record-shop-api/)
-
-
 
 ## install
 ```bash
