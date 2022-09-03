@@ -10,7 +10,7 @@ export const getRecordById = (id) => {
     return records.find(r => r.id === id);
 };
 
-export const AddRecord = (record) => {
+export const addRecord = (record) => {
     const newRecord = {
         id: uuidv4(),
         title: record.title,
@@ -22,7 +22,7 @@ export const AddRecord = (record) => {
     return newRecord;
 };
 
-export const EditRecordById = (id, record) => {
+export const editRecordById = (id, record) => {
     const recordToEdit = records.find(r => r.id == id);
     const editedRecord = {
         id: recordToEdit.id,
@@ -35,3 +35,10 @@ export const EditRecordById = (id, record) => {
     records.splice(recordToEditIndex, 1, editedRecord);
     return editedRecord;
 };
+
+export const deleteRecordById = (id) =>{
+    const recordToDelete = records.find(r => r.id == id);
+    const recordToDeleteIndex = records.indexOf(recordToDelete);
+    records.splice(recordToDeleteIndex, 1);
+    return recordToDelete;
+}

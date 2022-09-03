@@ -1,16 +1,22 @@
 import express from "express";
-import { controllAddRecord, controllAllRecords, controllEditRecordById, controllRecordById } from "../controllers/recordConroller.js";
+import {
+    addRecordController,
+    allRecordsController,
+    deleteRecordByIdController,
+    editRecordByIdController,
+    recordByIdController
+} from "../controllers/recordConroller.js";
 import auth from "../middleware/authentication.js";
 
 const router = express.Router();
 
 router.route("/")
-    .get(controllAllRecords)
-    .post(controllAddRecord)
+    .get(allRecordsController)
+    .post(addRecordController)
 
 
 router.route("/:id")
-    .get(controllRecordById)
-    .put(auth, controllEditRecordById)
-
+    .get(recordByIdController)
+    .put(auth, editRecordByIdController)
+    .delete(auth, deleteRecordByIdController)
 export default router;
